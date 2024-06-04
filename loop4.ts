@@ -9,18 +9,38 @@
 // o Iterate through the properties of myObject using a for...in loop.
 // o Inside the loop, print each property's name and its corresponding value to the
 // console.
-import gradient from "gradient-string"
-import chalk from "chalk"
-console.log(chalk.blueBright.bgWhiteBright.bold("\t\t\t\t\t\t Exploring Objects\n\n"));
-console.log(chalk.cyanBright("----------------------------------------------------------------------------------------------------------------\n"));
+import gradient from "gradient-string";
+import chalk from "chalk";
+console.log(
+  chalk.blueBright.bgWhiteBright.bold("\t\t\t\t\t\t Exploring Objects\n\n")
+);
+console.log(
+  chalk.cyanBright(
+    "----------------------------------------------------------------------------------------------------------------\n"
+  )
+);
+interface Items {
+  item1: string;
+  item2: string;
+  item3: string;
+  [key: string]: string;
+}
 
-let myObject: any = {
+let myObject: Items = {
   item1: "apple",
   item2: "pineapple",
   item3: "cherry",
 };
 for (const key in myObject) {
-  console.log( gradient.retro(`\t\t\t property name is ${key} = its corresponding value is ${myObject[key]}`));
+  console.log(
+    gradient.retro(
+      `\t\t\t property name is ${key} = its corresponding value is ${myObject[key]}`
+    )
+  );
 }
 
-console.log(chalk.cyanBright("----------------------------------------------------------------------------------------------------------------\n"));
+console.log(
+  chalk.cyanBright(
+    "----------------------------------------------------------------------------------------------------------------\n"
+  )
+);
